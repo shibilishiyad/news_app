@@ -4,12 +4,12 @@ List<CategoryModels> getcategory() {
   List<CategoryModels> categorys = [];
 
   categorys.add(CategoryModels(
-    categoryname: "Business",
+    categoryname: "Trade",
     categoryimage: "asset/images/business.jpg",
   ));
 
   categorys.add(CategoryModels(
-    categoryname: "Entertainment",
+    categoryname: "Shows",
     categoryimage: "asset/images/entertainment.jpg",
   ));
 
@@ -24,7 +24,7 @@ List<CategoryModels> getcategory() {
   ));
 
   categorys.add(CategoryModels(
-    categoryname: "Technology",
+    categoryname: "Tech",
     categoryimage: "asset/images/technology.jpg",
   ));
 

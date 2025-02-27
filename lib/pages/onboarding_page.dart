@@ -16,14 +16,10 @@ class _OnBoardingState extends State<OnBoarding> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-       
-          
           Container(
-            
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.6,
             decoration: const BoxDecoration(
-              
               image: DecorationImage(
                 image: AssetImage('asset/images/onboarding2.jpeg'),
                 fit: BoxFit.cover,
@@ -40,74 +36,69 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ),
 
-         
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: MediaQuery.of(context).size.height * 0.4,
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Colors.black,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50),
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                   
-                    const SizedBox(height: 30),
-
-                   
+                    const SizedBox(height: 10),
                     Text(
                       'Stay Updated',
                       style: GoogleFonts.poppins(
-                        fontSize: 28,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: Colors.white,
                       ),
                     ),
-
-                    const SizedBox(height: 8),
-
-                  
+                    const SizedBox(height: 15),
                     Text(
                       'Breaking news and in-depth analysis from trusted sources, all in one place.',
                       style: GoogleFonts.poppins(
                         fontSize: 15,
-                        color: Colors.grey[600],
+                        color: Colors.white,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-
-                    const SizedBox(height: 30),
-
-                    
+                    const SizedBox(height: 50),
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
-  context,
-  PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) =>  Home(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return FadeTransition(
-        opacity: animation,
-        child: child,
-      );
-    },
-    transitionDuration: const Duration(milliseconds: 300),
-  ),
-);
-                          
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      const Home(),
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                              transitionDuration:
+                                  const Duration(milliseconds: 300),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
+                          backgroundColor: Colors.white,
                           elevation: 5,
-                          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -115,44 +106,33 @@ class _OnBoardingState extends State<OnBoarding> {
                         child: Text(
                           'Get Started',
                           style: GoogleFonts.poppins(
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
                     ),
-
-                    const SizedBox(height: 15),
-
-                   
-                    Padding(
-                      padding: const EdgeInsets.only(
-                      top: 35
-                      ),
-                      child: Center(
-                        child: Text(
-                          'By continuing, you agree to our Terms & Conditions',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            color: Colors.grey[500],
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ),
+                    const SizedBox(height: 20),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(top: 15),
+                    //   child: Center(
+                    //     child: Text(
+                    //       'By continuing, you agree to our Terms & Conditions',
+                    //       style: GoogleFonts.poppins(
+                    //         fontSize: 12,
+                    //         color: Colors.white,
+                    //         fontWeight: FontWeight.w400,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
             ),
           ),
-            //  Padding(
-            //    padding: const EdgeInsets.all(8.0),
-            //    child: Container(height: 120,
-            //              width: 80,
-                         
-            //                child: Image.asset('asset/images/LOGO.png',color:Colors.black,fit:  BoxFit.cover,)),
-            //  ),
+         
         ],
       ),
     );

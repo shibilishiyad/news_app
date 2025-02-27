@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Utility/screen_size.dart';
-import 'package:newsapp/pages/home.dart';
+import 'package:newsapp/pages/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: Builder(
         builder: (context) {
           ScreenUtil.init(context);
-          return const Home();
+          return const OnBoarding();
         },
       ),
     );

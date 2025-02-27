@@ -1,23 +1,23 @@
 import 'dart:convert';
+import 'package:newsapp/models/artical_model.dart';
 import 'package:http/http.dart' as http;
-import 'package:newsapp/models/slider_model.dart';
 
-class Sliderr {
-  List<SliderModel> sliders = [];
+class News {
+  List<ArticalModel> news = [];
 
-  Future<void> getslider() async {
-    String url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=faaadc07cff54da88c8e9bae04748cd9';
-
+  Future<void> getnews() async {
+   
+    String url =
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=faaadc07cff54da88c8e9bae04748cd9";
 
     var response = await http.get(Uri.parse(url));
-    print("API Response: ${response.body}");
 
     var jsondata = jsonDecode(response.body);
 
     if (jsondata["status"] == "ok") {
       jsondata["articles"].forEach((element) {
         if (element["description"] != null && element["urlToImage"] != null) {
-          SliderModel sliderModel = SliderModel(
+          ArticalModel articalModel = ArticalModel(
             title: element["title"] ?? "No Title",
             description: element["description"],
             author: element["author"] ?? "Unknown Author",
@@ -25,11 +25,10 @@ class Sliderr {
             url: element["url"] ?? "",
             content: element["content"] ?? "",
           );
-          sliders.add(sliderModel );
+          news.add(articalModel);
         }
       });
     } else {
-      print("Failed to load news:");
     }
   }
 }
